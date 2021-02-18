@@ -45,7 +45,7 @@ class listener implements EventSubscriberInterface
 		$output = $event['output'];
 
 		$output = preg_replace_callback(
-			'#<script(.*)src="(.*\.js)"(.*)><\/script>#',
+			'#<script(.*)src=["\']{1}(.*\.js)["\']{1}(.*)><\/script>#',
 			function ($matches) {
 				return '<script' . $matches[1] . 'src="' . $matches[2] . '?assets_version=' . $this->config['assets_version'] . '"' . $matches[3] . '></script>';
 			},
