@@ -1,0 +1,7 @@
+services:
+    tatiana5.antibanner.listener:
+        class: tatiana5\antibanner\event\listener
+        arguments:
+            - '@config'
+        tags:
+            - { name: event.listener }
